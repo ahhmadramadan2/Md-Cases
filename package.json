@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    
+    "homepage": "https://ahhmadramadan2.github.io/Md-Cases",
+
      "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
