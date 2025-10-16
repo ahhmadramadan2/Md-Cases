@@ -3,13 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+   "homepage": "https://ahhmadramadan2.github.io/Md-Cases",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "homepage": "https://ahhmadramadan2.github.io/Md-Cases",
+   
 
      "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+   "deploy": "rm -rf deploy-temp && mkdir deploy-temp && cp -r dist/* deploy-temp/ && git checkout main && cp -r deploy-temp/* ./ && rm -rf deploy-temp && git add . && git commit -m \"Deploy React app to main root\" && git push origin main"
+
+
   },
   "dependencies": {
     "react": "^19.1.1",
