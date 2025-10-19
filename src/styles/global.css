@@ -175,43 +175,46 @@ footer a{display:block;margin:6px 0;color:#d1d5db}
 }
 
 /* Extra-compact styles on small screens */
-/* --- Responsive fix for product size grid --- */
+/* --- Phone layout: always 2 per row, stacked --- */
 @media (max-width: 700px) {
-  .grid { grid-template-columns: 1fr; }  /* one product per row */
+  /* show one product per row for space */
+  .grid { grid-template-columns: 1fr; }
 
-  .product-sizes { margin-top: 4px; }
-
+  /* turn the whole size area into a 2-col grid */
   .sizes-grid {
-    gap: 2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* exactly two per row */
+    gap: 4px;
   }
 
-  .sizes-row {
-    display: flex;
-    flex-wrap: wrap;        /* allow wrapping inside row */
-    gap: 2px;
+  /* flatten .sizes-row groups so each span becomes a grid item */
+  .sizes-row { 
+    display: contents;               /* allows spans to flow into the grid */
   }
 
   .sizes-row span {
-    flex: 1 1 48%;          /* two columns that wrap cleanly */
-    background: #111;
-    border: 1px solid #222;
-    border-radius: 4px;
+    min-width: 0;
+    width: 100%;
     padding: 5px 6px;
     font-size: 11px;
     line-height: 1.2;
-    text-align: center;
-    color: #f9fafb;
+    white-space: normal;             /* allow wrapping */
+    overflow-wrap: anywhere;
     word-break: break-word;
   }
 }
 
-@media (max-width: 480px) {
+/* optional: extra-tight on very small phones but still 2 per row */
+@media (max-width: 400px) {
   .sizes-row span {
-    flex: 1 1 100%;         /* single column on very small phones */
     font-size: 10.5px;
     padding: 4px 5px;
   }
 }
+
+/* safety: prevent container from clipping children */
+.product-card, .sizes-row { min-width: 0; }
+
 
 /* Responsive
 @media (max-width: 1000px){
