@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Md-Cases/',   // exact casing
+  base: process.env.NODE_ENV === 'production' ? '/Md-Cases/' : '/', // dev → "/", prod → "/Md-Cases/"
 })
 
 

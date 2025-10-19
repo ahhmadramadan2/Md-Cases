@@ -173,8 +173,8 @@ footer a{display:block;margin:6px 0;color:#d1d5db}
   padding:28px 20px;
   margin:40px 0;
   color:#fff;
-  width:100%;           /* <<< was fit-content; now full-width, nicer on phones */
-  max-width:900px;      /* optional cap */
+  width:100%;           
+  max-width:500px;     
   text-align:left;
 }
 
