@@ -5,13 +5,12 @@
   "type": "module",
   "homepage": "https://ahhmadramadan2.github.io/Md-Cases",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "postbuild": "shx cp dist/index.html dist/404.html",
-  "preview": "vite preview",
-  "deploy": "shx rm -rf deploy-temp && shx mkdir deploy-temp && shx cp -r dist/* deploy-temp/ && git checkout main && shx cp -r deploy-temp/* ./ && shx rm -rf deploy-temp && git add . && git commit -m \"Deploy React app to main root\" && git push origin main"
-}
-,
+    "dev": "vite",
+    "build": "vite build",
+    "postbuild": "shx cp dist/index.html dist/404.html",
+    "preview": "vite preview",
+    "deploy": "shx rm -rf deploy-temp && shx mkdir deploy-temp && shx cp -r dist/* deploy-temp/ && git checkout main && shx cp -r deploy-temp/* ./ && shx rm -rf deploy-temp && git add . && git commit -m \"Deploy React app to main root\" && git push origin main"
+  },
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
