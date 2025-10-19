@@ -18,7 +18,7 @@ export const products = [
   {
     id: 101,
     category: 'phone',
-    title:'Blue Case',
+    title:'Blue Caseee',
     // subtitle:"iPhone\n 11 (Regular/Pro/Pro Max)\n12 (Regular/Pro/Pro Max)\n13 (Regular/Pro/Pro Max)\n14 (Regular/Pro/Pro Max)\n15 (Regular/Pro/Pro Max)\n16 (Regular/Pro/Pro Max)",
     tag:'Rugged',
     price:10.99,

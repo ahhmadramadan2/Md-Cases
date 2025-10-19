@@ -8,6 +8,7 @@ import Reviews from "./components/Reviews.jsx";
 import Newsletter from "./components/Newsletter.jsx";
 import Footer from "./components/Footer.jsx";
 import CartDrawer from "./components/Cartdrawer.jsx";
+import SizesBox from "./components/SizesBox.jsx";
 
 
 export default function App(){
@@ -21,6 +22,7 @@ return (
 <Features />
 </section>
 <Collections />
+<SizesBox />  
 <Bestsellers />
 <Reviews />
 

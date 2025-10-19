@@ -21,7 +21,7 @@ export default function ProductCard({ product }){
        <p className="subtitle" style={{ whiteSpace: 'pre-line' }}>
   {product.subtitle}
 </p>
-{product.category === "phone" && (
+{/* {product.category === "phone" && (
   <div className="product-sizes">
     <h5 className="sizes-title"> SIZE:</h5>
     <div className="sizes-grid">
@@ -72,7 +72,7 @@ export default function ProductCard({ product }){
       </div>
     </div>
   </div>
-)}
+)} */}
 
 
         {/* Colorway selector */}
