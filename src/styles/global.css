@@ -121,6 +121,47 @@ footer a{display:block;margin:6px 0;color:#d1d5db}
 .swatch-btn.selected{border-color:#fff}
 .swatch{display:inline-block;width:18px;height:18px;border-radius:999px;border:1px solid #222}
 
+/* .product-sizes {
+  margin-top: 6px;
+  color: #fff;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.sizes-title {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #d1d5db;
+  margin-bottom: 4px;
+  letter-spacing: 0.4px;
+}
+
+.sizes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+} */
+
+/* .sizes-row {
+  display: flex;
+  gap: 3px;
+}
+
+.sizes-row span {
+  flex: 1;
+  background: #0f0f0f;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #f9fafb;
+  white-space: nowrap;
+  line-height: 1.2;
+} */
+
+/* base (desktop/tablet) */
 .product-sizes {
   margin-top: 6px;
   color: #fff;
@@ -142,7 +183,7 @@ footer a{display:block;margin:6px 0;color:#d1d5db}
   gap: 3px;
 }
 
-/* .sizes-row {
+.sizes-row {
   display: flex;
   gap: 3px;
 }
@@ -159,61 +200,48 @@ footer a{display:block;margin:6px 0;color:#d1d5db}
   color: #f9fafb;
   white-space: nowrap;
   line-height: 1.2;
-} */
+}
 
 .sizes-row:first-child span:first-child {
   border-color: #f9fafb;
 }
 
-/* --- Fix overflow on phones --- */
-.sizes-row { min-width: 0; }               /* allow children to shrink */
-.sizes-row span {
-  min-width: 0;                            /* fix flex text overflow */
-  white-space: normal;                     /* allow wrapping */
-  overflow-wrap: anywhere;                 /* break long tokens */
-  word-break: break-word;                  /* extra safety */
-}
-
-/* Extra-compact styles on small screens */
-/* --- Phone layout: always 2 per row, stacked --- */
+/* --- responsive fix --- */
 @media (max-width: 700px) {
-  /* show one product per row for space */
-  .grid { grid-template-columns: 1fr; }
+  /* ensure product card and grid can grow */
+  .product-card, .product-sizes, .sizes-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
 
-  /* turn the whole size area into a 2-col grid */
+  /* flatten the old multi-row layout into a 2-column grid */
   .sizes-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;  /* exactly two per row */
+    grid-template-columns: repeat(2, 1fr);  /* 2 per row */
     gap: 4px;
   }
 
-  /* flatten .sizes-row groups so each span becomes a grid item */
-  .sizes-row { 
-    display: contents;               /* allows spans to flow into the grid */
-  }
-
+  /* make each label auto-wrap within its box */
+  .sizes-row { display: contents; }
   .sizes-row span {
+    flex: 1 1 50%;
     min-width: 0;
-    width: 100%;
-    padding: 5px 6px;
-    font-size: 11px;
-    line-height: 1.2;
-    white-space: normal;             /* allow wrapping */
-    overflow-wrap: anywhere;
+    white-space: normal;        /* allow text to wrap */
     word-break: break-word;
+    overflow-wrap: anywhere;
+    font-size: 11px;
+    padding: 5px 6px;
   }
 }
 
-/* optional: extra-tight on very small phones but still 2 per row */
+/* super small phones */
 @media (max-width: 400px) {
   .sizes-row span {
     font-size: 10.5px;
     padding: 4px 5px;
   }
 }
-
-/* safety: prevent container from clipping children */
-.product-card, .sizes-row { min-width: 0; }
 
 
 /* Responsive
