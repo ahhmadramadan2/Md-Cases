@@ -7,7 +7,7 @@ return (
 <section className="container section">
 <div className="newsletter">
 <div>
-<h3>Join the Nova list</h3>
+<h3>Join the MD list</h3>
 <p>Get early access to drops, exclusive deals, and tips to keep your phone pristine.</p>
 </div>
 <form onSubmit={onSubmit}>

@@ -20,7 +20,7 @@ export default function Collections(){
           <img src={blue} alt="MagSafe cases"/>
           <span className="label">Blue Phone+Airpods  <li> 15.99$</li> </span>
         </a>
-        <a className="collection" href="#bestsellers" onClick={(e)=>{ e.preventDefault(); pick('clear'); }}>
+        <a className="collection" >
           <img src={orange} alt="Clear cases"/>
           <span className="label">Orange Phone+Airpods  <li> 15.99$</li>
           </span>

@@ -9,7 +9,9 @@ export default function ProductCard({ product }){
   const img = (variant?.img) || product.img;
 
   return (
+
     <div className="product" data-tag={product.tag}>
+      
       <div className="media">
         <img src={img} alt={product.title} loading="lazy"/>
         {!!product.compareAt && <span className="badge">Sale</span>}
@@ -19,6 +21,58 @@ export default function ProductCard({ product }){
        <p className="subtitle" style={{ whiteSpace: 'pre-line' }}>
   {product.subtitle}
 </p>
+{product.category === "phone" && (
+  <div className="product-sizes">
+    <h5 className="sizes-title"> SIZE:</h5>
+    <div className="sizes-grid">
+      <div className="sizes-row">
+        <span>iPhone 11</span>
+        <span>iPhone 11 Pro</span>
+        <span>iPhone 11 Pro Max</span>
+      </div>
+      <div className="sizes-row">
+        <span>iPhone 12</span>
+        <span>iPhone 12 Pro</span>
+        <span>iPhone 12 Pro Max</span>
+      </div>
+      <div className="sizes-row">
+        <span>iPhone 13</span>
+        <span>iPhone 13 Pro</span>
+        <span>iPhone 13 Pro Max</span>
+      </div>
+      <div className="sizes-row">
+        <span>iPhone 14</span>
+        <span>iPhone 14 Pro</span>
+        <span>iPhone 14 Pro Max</span>
+      </div>
+      <div className="sizes-row">
+        <span>iPhone 15</span>
+        <span>iPhone 15 Pro</span>
+        <span>iPhone 15 Pro Max</span>
+      </div>
+      <div className="sizes-row">
+        <span>iPhone 16</span>
+        <span>iPhone 16 Pro</span>
+        <span>iPhone 16 Pro Max</span>
+      </div>
+    </div>
+  </div>
+)}
+{product.category === "airpods" && (
+  <div className="product-sizes">
+    <h5 className="sizes-title">SELECT MODEL:</h5>
+    <div className="sizes-grid">
+      <div className="sizes-row">
+        <span>AirPods Pro (1st Gen)</span>
+        <span>AirPods Pro (2nd Gen)</span>
+      </div>
+      <div className="sizes-row">
+        <span>AirPods (2nd Gen)</span>
+        <span>AirPods (3rd Gen)</span>
+      </div>
+    </div>
+  </div>
+)}
 
 
         {/* Colorway selector */}
@@ -44,6 +98,8 @@ export default function ProductCard({ product }){
         <div className="rating">{stars}<span>({product.rating})</span></div>
         
       </div>
+      
     </div>
+    
   );
 }
