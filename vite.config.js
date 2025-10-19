@@ -9,7 +9,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/Md-Cases/', // important: use relative paths when deploying to root
+  base: '/', // important: use relative paths when deploying to root
   plugins: [react()],
 })
 
